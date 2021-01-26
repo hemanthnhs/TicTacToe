@@ -1,7 +1,7 @@
 import Button from "./Button";
 import { Layout, Row, Col } from "antd";
 
-const Board = ({ buttonClicked, btns }) => {
+const Board = ({ buttonClicked, btns, complete }) => {
   const buttons = [];
   for (let i = 0; i < 3; i++) {
     let row = [];
@@ -12,7 +12,8 @@ const Board = ({ buttonClicked, btns }) => {
             key={i * 3 + j}
             id={i * 3 + j}
             buttonClicked={buttonClicked}
-            player={btns.filter((b) => b.id === i * 3 + j)[0].player}
+            attrs={btns.filter((b) => b.id === i * 3 + j)[0]}
+            complete={complete}
           />
         </Col>
       );

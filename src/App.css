@@ -10,7 +10,12 @@
   text-align: center;
 }
 
+.player-1 {
+  color: #506b50;
+}
+
 .player-2 {
+  color: #43436d;
   text-align: end;
 }
 
@@ -44,4 +49,16 @@
 
 .button-player-2 {
   background-color: #43436d !important;
+}
+
+.winning-btn {
+  border: 2px solid yellow !important;
+}
+
+.player-active {
+  text-decoration: underline;
+}
+
+.player-inactive {
+  color: grey;
 }
