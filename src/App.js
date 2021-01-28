@@ -2,6 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import { CaretRightOutlined } from "@ant-design/icons";
 import Board from "./components/Board";
+import GameStatus from "./components/GameStatus";
 import { Layout, Row, Col } from "antd";
 const { Header, Content, Footer } = Layout;
 
@@ -16,6 +17,7 @@ const App = () => {
   const [buttons, setButtons] = useState(btns);
   const [currentPlayer, setPlayerTurn] = useState(1);
   const [winner, setWinner] = useState(null);
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const buttonClicked = (id) => {
     if (!checkCompletion(id, currentPlayer)) {
       setButtons(
@@ -122,6 +124,7 @@ const App = () => {
             btns={buttons}
             complete={winner != null}
           />
+          <GameStatus currentPlayer={currentPlayer} winner={winner} />
         </div>
       </Content>
       <Footer className="footer">

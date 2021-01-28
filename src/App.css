@@ -62,3 +62,9 @@
 .player-inactive {
   color: grey;
 }
+
+.align-center {
+  margin-top: 1%;
+  font-size: large;
+  text-align: center;
+}
