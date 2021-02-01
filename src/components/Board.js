@@ -1,18 +1,18 @@
 import Button from "./Button";
 import { Layout, Row, Col } from "antd";
 
-const Board = ({ buttonClicked, btns, complete }) => {
+const Board = ({ buttonClicked, btns, complete, gridSize }) => {
   const buttons = [];
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < gridSize; i++) {
     let row = [];
-    for (let j = 0; j < 3; j++) {
+    for (let j = 0; j < gridSize; j++) {
       row[j] = (
         <Col>
           <Button
-            key={i * 3 + j}
-            id={i * 3 + j}
+            key={i * gridSize + j}
+            id={i * gridSize + j}
             buttonClicked={buttonClicked}
-            attrs={btns.filter((b) => b.id === i * 3 + j)[0]}
+            attrs={btns.filter((b) => b.id === i * gridSize + j)[0]}
             complete={complete}
           />
         </Col>
